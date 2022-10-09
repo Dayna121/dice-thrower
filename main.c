@@ -2,18 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main() 
+int main(int argc, char *argv[]) 
 {
-	int a, b, l;
-	printf("write two numbers for cube:\n");
-	printf("minimum:\n");
-	scanf("%d", &a);
-	printf("maximum:\n");
-	scanf("%d", &b);
+	int a, b, l;	
+	a = atoi(argv[1]);
+	b = atoi(argv[2]);
 	srand(time(NULL));
 	for (int i = 0; i < 15; i++) {
-	//int i = 0;
-	//while (i < 15) {
+
 		l = rand() % (b - a + 1) + a;
 		printf("%d\n", l);
 		if (l == b)
@@ -24,7 +20,7 @@ int main()
 		{
 			printf("try again\n");
 		}
-		//i++;
+		
     }
 	return 0;	
 }
